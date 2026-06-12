@@ -29,5 +29,5 @@ A modern, scalable weapon buy menu for **Counter-Strike 1.6**, inspired by the *
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/cs2-buy-menu-cs16.git
+   git clone https://github.com/hazedxz/buy-menu-cs2.git
    cd cs2-buy-menu-cs16   
