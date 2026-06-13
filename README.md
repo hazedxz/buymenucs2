@@ -24,6 +24,7 @@ A modern, scalable weapon buy menu for **Counter-Strike 1.6**, inspired by the *
 - C++ Compiler (MSVC, GCC, or Clang)
 - CMake (optional, for building dependencies)
 - Counter-Strike 1.6 installed
+- Metahook
 
 ### Building from Source
 
