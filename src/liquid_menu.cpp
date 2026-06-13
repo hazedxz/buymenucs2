@@ -2,11 +2,11 @@
 #include "../vendor/imgui/imgui.h"
 #include <iostream>
 
-// Global vectors to store our categories
+
 std::vector<BuyMenuItem> categoryPistols;
 std::vector<BuyMenuItem> categoryRifles;
 
-// Helper function to populate items and load textures efficiently
+
 void AddWeapon(std::vector<BuyMenuItem>& category, const std::string& name, const std::string& cmd, int price) {
     BuyMenuItem item;
     item.displayName = name;
@@ -20,18 +20,18 @@ void AddWeapon(std::vector<BuyMenuItem>& category, const std::string& name, cons
 }
 
 void InitializeBuyMenu() {
-    // Vertical logging format for terminal clarity
+    
     std::cout << "[SYSTEM] Starting UI Initialization..." << std::endl;
     std::cout << "[SYSTEM] Allocating memory for textures..." << std::endl;
     
-    // --- PISTOLS ---
+    
     std::cout << "[DATA] Loading category: Pistols" << std::endl;
     AddWeapon(categoryPistols, "Glock-18", "glock", 400);
     AddWeapon(categoryPistols, "USP-S", "usp", 500);
     AddWeapon(categoryPistols, "P250", "p228", 300);
     AddWeapon(categoryPistols, "Desert Eagle", "deagle", 650);
 
-    // --- RIFLES ---
+    
     std::cout << "[DATA] Loading category: Rifles" << std::endl;
     AddWeapon(categoryRifles, "Galil AR", "galil", 2000);
     AddWeapon(categoryRifles, "FAMAS", "famas", 2250);
@@ -65,21 +65,21 @@ void RenderBuyMenu(bool* pOpen) {
 
     ApplyDarkCinematicStyle();
 
-    // Setup main window, removing native titlebars and making it unmovable to simulate an overlay
+    
     ImGuiWindowFlags windowFlags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | 
                                    ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoMove;
 
-    // Center the menu perfectly
+    
     ImGuiViewport* viewport = ImGui::GetMainViewport();
     ImGui::SetNextWindowPos(viewport->GetCenter(), ImGuiCond_Always, ImVec2(0.5f, 0.5f));
     ImGui::SetNextWindowSize(ImVec2(1000, 600), ImGuiCond_Once);
 
     ImGui::Begin("CS2_BuyMenu", pOpen, windowFlags);
 
-    // Grid Layout using ImGui Tables (Replicating the 5-column layout)
+    
     if (ImGui::BeginTable("BuyGrid", 5, ImGuiTableFlags_BordersInnerV | ImGuiTableFlags_SizingFixedFit)) {
         
-        // Table Headers
+        
         ImGui::TableSetupColumn("Equipment");
         ImGui::TableSetupColumn("Pistols");
         ImGui::TableSetupColumn("Mid-Tier");
