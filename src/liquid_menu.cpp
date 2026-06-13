@@ -87,23 +87,23 @@ void RenderBuyMenu(bool* pOpen) {
         ImGui::TableSetupColumn("Grenades");
         ImGui::TableHeadersRow();
 
-        // Let's populate the Rifles column as a test
+        
         ImGui::TableNextRow();
-        ImGui::TableSetColumnIndex(3); // Column 4 (0-indexed)
+        ImGui::TableSetColumnIndex(3); 
 
         for (const auto& weapon : categoryRifles) {
-            // Push an ID so ImGui knows each button is unique
+            
             ImGui::PushID(weapon.command.c_str());
             
-            // Create a custom button layout (Image + Text)
+            
             if (ImGui::Button("", ImVec2(180, 70))) {
-                // Execute buy command to CS 1.6 engine engine
+                
                 std::string engineCommand = weapon.command + "\n";
-                // TODO: Inject command to GoldSrc Engine
+                
                 std::cout << "[ACTION] Executed: " << engineCommand;
             }
 
-            // Draw content over the button we just created
+            
             ImVec2 minPos = ImGui::GetItemRectMin();
             ImGui::GetWindowDrawList()->AddImage(
                 (void*)(intptr_t)weapon.textureID, 
@@ -111,7 +111,7 @@ void RenderBuyMenu(bool* pOpen) {
                 ImVec2(minPos.x + 138, minPos.y + 55)
             );
             
-            // Draw the price text in gold color
+            
             ImGui::GetWindowDrawList()->AddText(
                 ImVec2(minPos.x + 10, minPos.y + 50), 
                 IM_COL32(255, 215, 0, 255), 
