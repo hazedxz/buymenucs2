@@ -1,15 +1,15 @@
 #include <metahook.h>
 #include <iostream>
 
-// External function declarations from other modules
+
 void InitializeBuyMenu();
 void RenderBuyMenu(bool* pOpen);
 void InstallOpenGLHooks();
 
-// Global state variables
+
 bool g_isMenuOpen = false;
 
-// Define g_pMetaHookAPI here — declared extern in metahook.h but never defined in the SDK
+
 metahook_api_t* g_pMetaHookAPI = nullptr;
 
 void IPluginsV3::Init(metahook_api_t* pAPI, mh_interface_t* pInterface, mh_enginesave_t* pSave) {
